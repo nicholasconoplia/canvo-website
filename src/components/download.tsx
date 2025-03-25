@@ -1,12 +1,14 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Apple, Monitor, Phone } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import MacDownloadModal from "./mac-download-modal"
 
 export default function Download() {
+  const [isMacModalOpen, setIsMacModalOpen] = useState(false)
   const sectionRef = useRef(null)
   const contentRef = useRef(null)
   const buttonsRef = useRef(null)
@@ -60,7 +62,7 @@ export default function Download() {
 
         <div ref={buttonsRef} className="flex flex-col md:flex-row items-center justify-center gap-8 max-w-5xl mx-auto">
           <div ref={macRef} className="w-full md:w-1/3">
-            <a href="https://github.com/nicholasconoplia/student-todo-list/releases/download/4.0/To-Do-4.0.0-arm64.dmg" className="block">
+            <button onClick={() => setIsMacModalOpen(true)} className="block w-full">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-700 to-purple-500 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                 <Button
@@ -78,7 +80,7 @@ export default function Download() {
                   </div>
                 </Button>
               </div>
-            </a>
+            </button>
           </div>
 
           <div ref={windowsRef} className="w-full md:w-1/3">
@@ -132,6 +134,11 @@ export default function Download() {
           </div>
         </div>
       </div>
+      
+      <MacDownloadModal 
+        isOpen={isMacModalOpen} 
+        onClose={() => setIsMacModalOpen(false)} 
+      />
     </section>
   )
 }
