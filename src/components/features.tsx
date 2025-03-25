@@ -14,6 +14,7 @@ import {
   Plus,
   School,
   Settings,
+  Shuffle,
 } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -73,6 +74,11 @@ const features = [
     icon: <PieChart className="h-12 w-12 text-primary" />,
     title: "Productivity Stats",
     description: "Track completion rates, tasks completed, and maintain your daily streak.",
+  },
+  {
+    icon: <Shuffle className="h-12 w-12 text-primary" />,
+    title: "Task Decision Wheel",
+    description: "Can't decide what to work on? Spin the wheel to randomly select from your incomplete tasks.",
   },
   {
     icon: <Calendar className="h-12 w-12 text-primary" />,
