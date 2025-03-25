@@ -127,7 +127,7 @@ export default function Download() {
 
         <div className="mt-16 text-center text-muted-foreground">
           <div className="inline-block backdrop-blur-sm bg-background/20 p-4 rounded-xl border border-purple-500/10">
-            <p>Version 4.0.0 | Released March 2024</p>
+            <p>Version 4.0.0 | Released March 2025</p>
             <p className="mt-2">Compatible with macOS 10.15+ and Windows 10+</p>
           </div>
         </div>

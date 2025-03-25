@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "How does Canvo connect to my Canvas account?",
     answer:
-      "Canvo uses secure OAuth authentication to connect to your Canvas account. You'll be prompted to log in to Canvas and authorize Canvo to access your assignments and course information.",
+      "Canvo uses a secure API key to connect to your Canvas account. Simply enter your Canvas API key in the app settings, and Canvo will automatically sync your assignments and course information.",
   },
   {
     question: "Does Canvo work with any university that uses Canvas?",
