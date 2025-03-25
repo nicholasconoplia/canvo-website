@@ -118,7 +118,6 @@ export default function SecurityNotice() {
                     <li>We don't collect any personal data or Canvas credentials</li>
                     <li>All data is stored locally on your device</li>
                     <li>We use secure API connections to Canvas</li>
-                    <li>Our code is regularly reviewed by the community</li>
                   </ul>
                 </div>
               </div>
