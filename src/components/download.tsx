@@ -6,9 +6,11 @@ import { Apple, Monitor, Phone } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import MacDownloadModal from "./mac-download-modal"
+import WindowsDownloadModal from "./windows-download-modal"
 
 export default function Download() {
   const [isMacModalOpen, setIsMacModalOpen] = useState(false)
+  const [isWindowsModalOpen, setIsWindowsModalOpen] = useState(false)
   const sectionRef = useRef(null)
   const contentRef = useRef(null)
   const buttonsRef = useRef(null)
@@ -84,7 +86,7 @@ export default function Download() {
           </div>
 
           <div ref={windowsRef} className="w-full md:w-1/3">
-            <a href="https://github.com/nicholasconoplia/student-todo-list/releases/download/4.0/win-unpacked.zip" className="block">
+            <button onClick={() => setIsWindowsModalOpen(true)} className="block w-full">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                 <Button
@@ -102,7 +104,7 @@ export default function Download() {
                   </div>
                 </Button>
               </div>
-            </a>
+            </button>
           </div>
 
           <div ref={iphoneRef} className="w-full md:w-1/3">
@@ -138,6 +140,11 @@ export default function Download() {
       <MacDownloadModal 
         isOpen={isMacModalOpen} 
         onClose={() => setIsMacModalOpen(false)} 
+      />
+      
+      <WindowsDownloadModal 
+        isOpen={isWindowsModalOpen} 
+        onClose={() => setIsWindowsModalOpen(false)} 
       />
     </section>
   )
